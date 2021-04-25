@@ -1,3 +1,4 @@
+###### Please star this repo if you liked it!
 # linux-surface-overlay
 Gentoo Overlay with surface kernel and other utilities from linux-surface repo. Packages are currently working, but require further testing!
 
@@ -22,3 +23,5 @@ eg:```eselect repository enable linux-surface```
 # Information
 - surface-sources is the normal gentoo-sources with surface patchsets installed
 - iptsd is needed for touchscreen support. Please also enable the services after install.
+
+
