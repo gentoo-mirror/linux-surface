@@ -1,38 +1,38 @@
 # Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="6"
+EAPI="8"
 ETYPE="sources"
 K_SECURITY_UNSUPPORTED="1"
 K_WANT_GENPATCHES="base extras experimental"
-K_GENPATCHES_VER="10"
+K_GENPATCHES_VER="14"
 
 inherit kernel-2
-inherit eutils
 detect_version
 detect_arch
 
 KEYWORDS="~amd64"
-HOMEPAGE="https://github.com/linux-surface/linux-surface"
+HOMEPAGE="https://dev.gentoo.org/~mpagano/genpatches"
 IUSE="experimental"
+
 DESCRIPTION="Full sources including the Gentoo and Surface patchset for the ${KV_MAJOR}.${KV_MINOR} kernel tree."
 SRC_URI="${KERNEL_URI} ${GENPATCHES_URI} ${ARCH_URI}"
 
-
 src_prepare() {
-	eapply "${FILESDIR}/5.12/0001-surface3-oemb.patch"
-	eapply "${FILESDIR}/5.12/0002-mwifiex.patch"
-	eapply "${FILESDIR}/5.12/0003-ath10k.patch"
-	eapply "${FILESDIR}/5.12/0004-ipts.patch"
-	eapply "${FILESDIR}/5.12/0005-surface-sam-over-hid.patch"
-	eapply "${FILESDIR}/5.12/0006-surface-sam.patch"
-	eapply "${FILESDIR}/5.12/0007-surface-typecover.patch"
-	eapply "${FILESDIR}/5.12/0008-surface-go-typecover.patch"
-	eapply "${FILESDIR}/5.12/0009-surface-go-touchscreen.patch"
-	eapply "${FILESDIR}/5.12/0010-cameras.patch"
-	eapply "${FILESDIR}/5.12/0011-s0ix-amd.patch"
+	eapply "${FILESDIR}/5.13/0001-surface3-oemb.patch"
+	eapply "${FILESDIR}/5.13/0002-mwifiex.patch"
+	eapply "${FILESDIR}/5.13/0003-ath10k.patch"
+	eapply "${FILESDIR}/5.13/0004-ipts.patch"
+	eapply "${FILESDIR}/5.13/0005-surface-sam-over-hid.patch"
+	eapply "${FILESDIR}/5.13/0006-surface-sam.patch"
+	eapply "${FILESDIR}/5.13/0007-surface-hotplug.patch"
+	eapply "${FILESDIR}/5.13/0008-surface-typecover.patch"
+	eapply "${FILESDIR}/5.13/0009-cameras.patch"
+	eapply "${FILESDIR}/5.13/0010-amd-gpio.patch"
+	eapply "${FILESDIR}/5.13/0011-amd-s0ix.patch"
 	eapply_user
 }
+
 
 pkg_setup() {
 	ewarn ""
