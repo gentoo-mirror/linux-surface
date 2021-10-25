@@ -1,4 +1,4 @@
 app-misc/surface-control 9999: Control various aspects of Microsoft Surface devices on Linux from the shell.
 dev-libs/libwacom-surface 1.9 1.11: Library for identifying Wacom tablets and their model-specific features
 sys-firmware/iptsd 0.4: Userspace daemon for Intel Precise Touch & Stylus
-sys-kernel/surface-sources 4.19.198 5.10.52 5.11.16 5.12.14 5.13.4 5.13.12 5.13.13: Full sources including the Gentoo and Surface patchset for the 5.13 kernel tree.
+sys-kernel/surface-sources 4.19.198 5.10.52 5.11.16 5.12.14 5.13.4 5.13.12 5.13.13 5.14.14: Full sources including the Gentoo patchset and Surface patchset for the 5.14 kernel tree
