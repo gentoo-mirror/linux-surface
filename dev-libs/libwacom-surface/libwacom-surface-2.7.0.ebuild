@@ -1,17 +1,18 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 PYTHON_COMPAT=( python3_{9..11} )
-inherit meson python-any-r1 toolchain-funcs udev
+inherit meson python-any-r1 udev
 
-DESCRIPTION="Library for identifying Wacom tablets and their model-specific features"
-HOMEPAGE="https://github.com/linuxwacom/libwacom"
+DESCRIPTION="libwacom with patches to support Microsoft Surface Devices"
+HOMEPAGE="https://github.com/linux-surface/libwacom-surface"
 SRC_URI="https://github.com/linuxwacom/libwacom/releases/download/libwacom-${PV}/libwacom-${PV}.tar.xz"
+S="${WORKDIR}/libwacom-${PV}"
 
 LICENSE="MIT"
-SLOT="0"
+SLOT="0/9" # libwacom SONAME
 KEYWORDS="~alpha amd64 arm ~arm64 ~ia64 ppc ppc64 sparc x86"
 IUSE="doc test"
 RESTRICT="!test? ( test )"
@@ -23,11 +24,11 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 BDEPEND="
 	virtual/pkgconfig
-	doc? ( app-doc/doxygen )
+	doc? ( app-text/doxygen )
 	test? (
 		${PYTHON_DEPS}
 		$(python_gen_any_dep '
-			dev-python/python-libevdev[${PYTHON_USEDEP}]
+			dev-python/libevdev[${PYTHON_USEDEP}]
 			dev-python/pyudev[${PYTHON_USEDEP}]
 			dev-python/pytest[${PYTHON_USEDEP}]
 		')
@@ -35,7 +36,7 @@ BDEPEND="
 "
 
 python_check_deps() {
-	python_has_version "dev-python/python-libevdev[${PYTHON_USEDEP}]" &&
+	python_has_version "dev-python/libevdev[${PYTHON_USEDEP}]" &&
 	python_has_version "dev-python/pyudev[${PYTHON_USEDEP}]" &&
 	python_has_version "dev-python/pytest[${PYTHON_USEDEP}]"
 }
@@ -46,9 +47,9 @@ pkg_setup() {
 	fi
 }
 
-S="${WORKDIR}/libwacom-${PV}"
-
 src_prepare() {
+	default
+
 	eapply "${FILESDIR}/2.7.0/0001-Add-support-for-BUS_VIRTUAL.patch"
 	eapply "${FILESDIR}/2.7.0/0002-Add-support-for-Intel-Management-Engine-bus.patch"
 	eapply "${FILESDIR}/2.7.0/0003-data-Add-Microsoft-Surface-Pro-3.patch"
@@ -65,10 +66,11 @@ src_prepare() {
 	eapply "${FILESDIR}/2.7.0/0014-data-Add-Microsoft-Surface-Book-3-13.5.patch"
 	eapply "${FILESDIR}/2.7.0/0015-data-Add-Microsoft-Surface-Book-3-15.patch"
 	eapply "${FILESDIR}/2.7.0/0016-data-Add-Microsoft-Surface-Laptop-Studio.patch"
-
 	eapply_user
-}
 
+	# Don't call systemd daemon-reload in the test suite
+	sed -i -e '/daemon-reload/d' test/test_udev_rules.py || die
+}
 
 src_configure() {
 	local emesonargs=(
