@@ -1,37 +1,26 @@
-#### Please star this repo if you liked it
 # linux-surface-overlay
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/powered-by-electricity.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](https://forthebadge.com)
+Gentoo Overlay with surface kernel and other utilities from the linux-surface repo. Packages aren't tested, if you find any issues feel free to help resolve them or report them at least.
 
-
-Gentoo Overlay with surface kernel and other utilities from linux-surface repo. Packages are currently working, but require further testing!
-
-# Full Install Guide
-If you already have a bootable USB with secureboot disabled you can go ahead and watch the Install Guide:
-
-https://youtu.be/f9OQxdOk-TM
-
-Otherwise, please follow the _**prerequisites first**_
-
-https://parinz.github.io/linux-surface-overlay/docs/intro/
+# Installing Gentoo
+For installing Gentoo on a Surface device you can mostly refer to the [Gentoo Handbook](https://wiki.gentoo.org/wiki/Handbook:AMD64).
+For better hardware support you will need to use the ```surface-sources``` package from this repo instead of the regular ```gentoo-sources```. Make sure to enable the appropriate kernel options. For some hardware (namely the touchscreen) you'll need to install the additional packages in this repo.
 
 # Usage
 Use layman or eselect repositiory.
 
-eg:```layman -a linux-surface```
+```# layman -a linux-surface```
 
-eg:```eselect repository enable linux-surface```
+```# eselect repository enable linux-surface```
 
 
-# Packages List
-- surface-sources-6.7.8
-- iptsd-2
-- libwacom-surface-2.9.0
-- surface-control-0.4.6.2 (I need help for testing this as I don't personally use it).
+# Packages
+- surface-sources (the normal gentoo-sources with surface patchsets applied)
+- iptsd (deamon for touchscreen support; enable the service after installing)
+- libwacom-surface (for better touchscreen support)
+- surface-control (a commandline utility for controlling various aspects of surface devices)
 
-# Information
-- *surface-sources* is the normal gentoo-sources with surface patchsets installed.
-- *iptsd* is needed for touchscreen support. Please also enable the services after install.
-- *libwacom-surface* helps provides better touchscreen support, please install it.
-- *surface-control* is a commandline utility to help with controlling your surface device, recommended to install.
+## Notices
+### surface-dtx-daemon
+Surface-dtx-daemon will be added some time in the future. But I will be unable to do any tesing as I do not have the hardware for it.
+### iptsd
+Iptsd works on openrc and should also work on systemd but I didn't test it.
