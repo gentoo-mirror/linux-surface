@@ -1,8 +1,8 @@
 EAPI="8"
 ETYPE="sources"
 K_SECURITY_UNSUPPORTED="1"
-K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="1"
+K_WANT_GENPATCHES="base extras experimental"
+K_GENPATCHES_VER="10"
 
 inherit kernel-2
 detect_version
@@ -10,6 +10,7 @@ detect_arch
 
 KEYWORDS="~amd64 ~x86"
 HOMEPAGE="https://github.com/Parinz/linux-surface-overlay/"
+IUSE="experimental"
 
 DESCRIPTION="Full sources including the Gentoo patchset and Surface patchset for the ${KV_MAJOR}.${KV_MINOR} kernel tree"
 SRC_URI="${KERNEL_URI} ${GENPATCHES_URI} ${ARCH_URI}"
