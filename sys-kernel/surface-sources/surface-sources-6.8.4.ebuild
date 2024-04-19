@@ -9,7 +9,7 @@ detect_version
 detect_arch
 
 KEYWORDS="~amd64 ~x86"
-HOMEPAGE="https://github.com/Parinz/linux-surface-overlay/"
+HOMEPAGE="https://github.com/linux-surface/linux-surface"
 IUSE="experimental"
 
 DESCRIPTION="Full sources including the Gentoo patchset and Surface patchset for the ${KV_MAJOR}.${KV_MINOR} kernel tree"
@@ -47,7 +47,7 @@ pkg_setup() {
 
 pkg_postinst() {
 	kernel-2_pkg_postinst
-	einfo "For more info on this patchset, and how to report problems, see:"
+	einfo "For more info on this patchset, see:"
 	einfo "${HOMEPAGE}"
 }
 
