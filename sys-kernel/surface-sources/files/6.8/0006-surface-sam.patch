@@ -294,7 +294,7 @@ index 000000000000..7c2e3ae3eb40
 +});
 +
 +// hwmon
-+umode_t surface_fan_hwmon_is_visible(const void *drvdata,
++static umode_t surface_fan_hwmon_is_visible(const void *drvdata,
 +				     enum hwmon_sensor_types type, u32 attr,
 +				     int channel)
 +{
