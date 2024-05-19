@@ -1,2 +1,4 @@
-sys-kernel
+app-misc
+dev-libs
 sys-firmware
+sys-kernel
