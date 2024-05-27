@@ -20,8 +20,6 @@ Use layman or eselect repositiory.
 - surface-control (a commandline utility for controlling various aspects of surface devices)
 
 ## Notices
-### overlay
-This repo hasn't yet been added to the official gentoo repositories. You'll have to add it manually for now.
 ### surface-dtx-daemon
 Surface-dtx-daemon will be added some time in the future. But I will be unable to do any testing as I do not have the hardware for it.
 ### iptsd
