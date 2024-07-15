@@ -2,7 +2,7 @@ EAPI="8"
 ETYPE="sources"
 K_SECURITY_UNSUPPORTED="1"
 K_WANT_GENPATCHES="base extras experimental"
-K_GENPATCHES_VER="15"
+K_GENPATCHES_VER="7"
 
 inherit kernel-2
 detect_version
@@ -17,20 +17,21 @@ SRC_URI="${KERNEL_URI} ${GENPATCHES_URI} ${ARCH_URI}"
 
 
 src_prepare() {
-	eapply "${FILESDIR}/6.8/0001-surface3-oemb.patch"
-	eapply "${FILESDIR}/6.8/0002-mwifiex.patch"
-	eapply "${FILESDIR}/6.8/0003-ath10k.patch"
-	eapply "${FILESDIR}/6.8/0004-ipts.patch"
-	eapply "${FILESDIR}/6.8/0005-ithc.patch"
-	eapply "${FILESDIR}/6.8/0006-surface-sam.patch"
-	eapply "${FILESDIR}/6.8/0007-surface-sam-over-hid.patch"
-	eapply "${FILESDIR}/6.8/0008-surface-button.patch"
-	eapply "${FILESDIR}/6.8/0009-surface-typecover.patch"
-	eapply "${FILESDIR}/6.8/0010-surface-shutdown.patch"
-	eapply "${FILESDIR}/6.8/0011-surface-gpe.patch"
-	eapply "${FILESDIR}/6.8/0012-cameras.patch"
-	eapply "${FILESDIR}/6.8/0013-amd-gpio.patch"
-	eapply "${FILESDIR}/6.8/0014-rtc.patch"
+	eapply "${FILESDIR}/6.9/0001-secureboot.patch"
+	eapply "${FILESDIR}/6.9/0002-surface3-oemb.patch"
+	eapply "${FILESDIR}/6.9/0003-mwifiex.patch"
+	eapply "${FILESDIR}/6.9/0004-ath10k.patch"
+	eapply "${FILESDIR}/6.9/0005-ipts.patch"
+	eapply "${FILESDIR}/6.9/0006-ithc.patch"
+	eapply "${FILESDIR}/6.9/0007-surface-sam.patch"
+	eapply "${FILESDIR}/6.9/0008-surface-sam-over-hid.patch"
+	eapply "${FILESDIR}/6.9/0009-surface-button.patch"
+	eapply "${FILESDIR}/6.9/0010-surface-typecover.patch"
+	eapply "${FILESDIR}/6.9/0011-surface-shutdown.patch"
+	eapply "${FILESDIR}/6.9/0012-surface-gpe.patch"
+	eapply "${FILESDIR}/6.9/0013-cameras.patch"
+	eapply "${FILESDIR}/6.9/0014-amd-gpio.patch"
+	eapply "${FILESDIR}/6.9/0015-rtc.patch"
 	eapply_user
 }
 
