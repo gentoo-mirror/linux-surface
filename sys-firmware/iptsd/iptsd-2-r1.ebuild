@@ -16,7 +16,7 @@ IUSE=""
 
 DEPEND="dev-libs/hidapi dev-cpp/cli11 dev-libs/spdlog dev-cpp/ms-gsl dev-libs/inih"
 RDEPEND="${DEPEND}"
-BDEPEND="dev-build/ninja sys-devel/gcc dev-build/meson"
+BDEPEND="dev-build/ninja sys-devel/gcc dev-build/meson media-libs/libsdl2 dev-cpp/eigen"
 
 src_configure() {
 	meson_src_configure
