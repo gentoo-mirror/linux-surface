@@ -16,7 +16,7 @@ IUSE=""
 
 DEPEND="dev-libs/hidapi dev-cpp/cli11 dev-libs/spdlog dev-cpp/ms-gsl dev-libs/inih"
 RDEPEND="${DEPEND}"
-BDEPEND="dev-build/ninja sys-devel/gcc dev-build/meson"
+BDEPEND="dev-build/ninja dev-build/meson"
 
 src_configure() {
 	meson_src_configure
@@ -24,8 +24,8 @@ src_configure() {
 
 src_install() {
 	meson_src_install
-	newbin "${FILESDIR}"/sh iptsd-run
-	newinitd "${FILESDIR}"/initd iptsd
+	newbin "${FILESDIR}/sh" iptsd-run
+	newinitd "${FILESDIR}/initd" iptsd
 	systemd_dounit "${FILESDIR}/iptsd.service"
 	systemd_dotmpfiles "${FILESDIR}/iptsd.conf"
 }
