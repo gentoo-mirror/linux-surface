@@ -14,9 +14,9 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="dev-libs/hidapi dev-cpp/cli11 dev-libs/spdlog dev-cpp/ms-gsl dev-libs/inih"
+DEPEND="dev-libs/hidapi dev-cpp/cli11 dev-libs/spdlog dev-cpp/ms-gsl dev-libs/inih media-libs/libsdl2 dev-cpp/eigen"
 RDEPEND="${DEPEND}"
-BDEPEND="dev-build/ninja sys-devel/gcc dev-build/meson media-libs/libsdl2 dev-cpp/eigen"
+BDEPEND="dev-build/ninja dev-build/meson"
 
 src_configure() {
 	meson_src_configure
@@ -24,8 +24,8 @@ src_configure() {
 
 src_install() {
 	meson_src_install
-	newbin "${FILESDIR}"/sh iptsd-run
-	newinitd "${FILESDIR}"/initd iptsd
+	newbin "${FILESDIR}/sh" iptsd-run
+	newinitd "${FILESDIR}/initd" iptsd
 	systemd_dounit "${FILESDIR}/iptsd.service"
 	systemd_dotmpfiles "${FILESDIR}/iptsd.conf"
 }
