@@ -22,7 +22,7 @@ src_prepare() {
 	eapply "${FILESDIR}/6.10/0004-ath10k.patch"
 	eapply "${FILESDIR}/6.10/0005-ipts.patch"
 	eapply "${FILESDIR}/6.10/0006-ithc.patch"
-	eapply "${FILESDIR}/6.10/0007-surface-sam-fix.patch"
+	eapply "${FILESDIR}/6.10/0007-surface-sam.patch"
 	eapply "${FILESDIR}/6.10/0008-surface-sam-over-hid.patch"
 	eapply "${FILESDIR}/6.10/0009-surface-button.patch"
 	eapply "${FILESDIR}/6.10/0010-surface-typecover.patch"
