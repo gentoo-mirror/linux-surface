@@ -11,7 +11,7 @@ SRC_URI="https://github.com/linux-surface/${PN}/archive/v${PV}.tar.gz -> ${P}.ta
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86 ~arm64"
 IUSE=""
 
 DEPEND="dev-libs/hidapi dev-cpp/cli11 dev-libs/spdlog dev-cpp/ms-gsl dev-libs/inih"

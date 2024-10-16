@@ -6,21 +6,21 @@
 EAPI=8
 
 CRATES="
-	anstream@0.6.13
-	anstyle-parse@0.2.3
-	anstyle-query@1.0.2
-	anstyle-wincon@3.0.2
-	anstyle@1.0.6
-	anyhow@1.0.81
+	anstream@0.6.15
+	anstyle-parse@0.2.5
+	anstyle-query@1.1.1
+	anstyle-wincon@3.0.4
+	anstyle@1.0.8
+	anyhow@1.0.88
 	autocfg@1.1.0
-	bitflags@2.4.2
+	bitflags@2.6.0
 	cfg-if@1.0.0
-	cfg_aliases@0.1.1
-	clap@4.5.2
-	clap_builder@4.5.2
-	clap_complete@4.5.1
-	clap_lex@0.7.0
-	colorchoice@1.0.0
+	cfg_aliases@0.2.1
+	clap@4.5.17
+	clap_builder@4.5.17
+	clap_complete@4.5.26
+	clap_lex@0.7.2
+	colorchoice@1.0.2
 	futures-channel@0.3.30
 	futures-core@0.3.30
 	futures-executor@0.3.30
@@ -31,58 +31,59 @@ CRATES="
 	futures-util@0.3.30
 	futures@0.3.30
 	hermit-abi@0.3.9
-	indoc@2.0.4
+	indoc@2.0.5
 	io-lifetimes@1.0.11
-	itoa@1.0.10
-	libc@0.2.153
+	is_terminal_polyfill@1.70.1
+	itoa@1.0.11
+	libc@0.2.158
 	libudev-sys@0.1.4
-	memchr@2.7.1
-	nix@0.27.1
-	nix@0.28.0
+	memchr@2.7.4
+	nix@0.29.0
 	once_cell@1.19.0
 	pin-project-lite@0.2.13
 	pin-utils@0.1.0
 	pkg-config@0.3.30
-	proc-macro2@1.0.79
-	quote@1.0.35
-	ryu@1.0.17
-	serde@1.0.197
-	serde_derive@1.0.197
-	serde_json@1.0.114
+	proc-macro2@1.0.86
+	quote@1.0.37
+	ryu@1.0.18
+	serde@1.0.210
+	serde_derive@1.0.210
+	serde_json@1.0.128
 	slab@0.4.9
-	smallvec@1.13.1
-	strsim@0.11.0
-	syn@2.0.52
-	thiserror-impl@1.0.58
-	thiserror@1.0.58
+	smallvec@1.13.2
+	strsim@0.11.1
+	syn@2.0.77
+	thiserror-impl@1.0.63
+	thiserror@1.0.63
 	tracing-attributes@0.1.27
 	tracing-core@0.1.32
 	tracing@0.1.40
-	udev@0.8.0
-	unicode-ident@1.0.12
-	utf8parse@0.2.1
+	udev@0.9.0
+	unicode-ident@1.0.13
+	utf8parse@0.2.2
 	windows-sys@0.48.0
 	windows-sys@0.52.0
 	windows-targets@0.48.5
-	windows-targets@0.52.4
+	windows-targets@0.52.6
 	windows_aarch64_gnullvm@0.48.5
-	windows_aarch64_gnullvm@0.52.4
+	windows_aarch64_gnullvm@0.52.6
 	windows_aarch64_msvc@0.48.5
-	windows_aarch64_msvc@0.52.4
+	windows_aarch64_msvc@0.52.6
 	windows_i686_gnu@0.48.5
-	windows_i686_gnu@0.52.4
+	windows_i686_gnu@0.52.6
+	windows_i686_gnullvm@0.52.6
 	windows_i686_msvc@0.48.5
-	windows_i686_msvc@0.52.4
+	windows_i686_msvc@0.52.6
 	windows_x86_64_gnu@0.48.5
-	windows_x86_64_gnu@0.52.4
+	windows_x86_64_gnu@0.52.6
 	windows_x86_64_gnullvm@0.48.5
-	windows_x86_64_gnullvm@0.52.4
+	windows_x86_64_gnullvm@0.52.6
 	windows_x86_64_msvc@0.48.5
-	windows_x86_64_msvc@0.52.4
+	windows_x86_64_msvc@0.52.6
 "
 
 declare -A GIT_CRATES=(
-	[sdtx]='https://github.com/linux-surface/libsurfacedtx;6da7c74d931808c86c515df3425d3112e40a2007;libsurfacedtx-%commit%/sdtx'
+	[sdtx]='https://github.com/linux-surface/libsurfacedtx;46bca21b52a707e9e5bd951d40908b6a02fe921e;libsurfacedtx-%commit%/sdtx'
 )
 
 inherit cargo
