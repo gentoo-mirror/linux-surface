@@ -21,6 +21,6 @@ Use layman or eselect repositiory.
 
 ## Notices
 ### surface-dtx-daemon
-Surface-dtx-daemon will be added some time in the future. But I will be unable to do any testing as I do not have the hardware for it.
+Surface-dtx-daemon will be added some time in the future, but I do not have the hardware for it.
 ### iptsd
-Iptsd works on openrc and should also work on systemd but I didn't test it.
+Iptsd works on openrc and may work on systemd (I don't use systemd).
