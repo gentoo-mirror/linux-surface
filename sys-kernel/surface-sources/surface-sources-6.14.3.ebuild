@@ -2,7 +2,7 @@ EAPI="8"
 ETYPE="sources"
 K_SECURITY_UNSUPPORTED="1"
 K_WANT_GENPATCHES="base extras experimental"
-K_GENPATCHES_VER="10"
+K_GENPATCHES_VER="4"
 
 inherit kernel-2
 detect_version
@@ -16,21 +16,21 @@ DESCRIPTION="Full sources including the Gentoo patchset and Surface patchset for
 SRC_URI="${KERNEL_URI} ${GENPATCHES_URI} ${ARCH_URI}"
 
 src_prepare() {
-	eapply "${FILESDIR}/6.13/0001-secureboot.patch"
-	eapply "${FILESDIR}/6.13/0002-surface3.patch"
-	eapply "${FILESDIR}/6.13/0003-mwifiex.patch"
-	eapply "${FILESDIR}/6.13/0004-ath10k.patch"
-	eapply "${FILESDIR}/6.13/0005-ipts.patch"
-	eapply "${FILESDIR}/6.13/0006-ithc.patch"
-	eapply "${FILESDIR}/6.13/0007-surface-sam.patch"
-	eapply "${FILESDIR}/6.13/0008-surface-sam-over-hid.patch"
-	eapply "${FILESDIR}/6.13/0009-surface-button.patch"
-	eapply "${FILESDIR}/6.13/0010-surface-typecover.patch"
-	eapply "${FILESDIR}/6.13/0011-surface-shutdown.patch"
-	eapply "${FILESDIR}/6.13/0012-surface-gpe.patch"
-	eapply "${FILESDIR}/6.13/0013-cameras.patch"
-	eapply "${FILESDIR}/6.13/0014-amd-gpio.patch"
-	eapply "${FILESDIR}/6.13/0015-rtc.patch"
+	eapply "${FILESDIR}/6.14/0001-secureboot.patch"
+	eapply "${FILESDIR}/6.14/0002-surface3.patch"
+	eapply "${FILESDIR}/6.14/0003-mwifiex.patch"
+	eapply "${FILESDIR}/6.14/0004-ath10k.patch"
+	eapply "${FILESDIR}/6.14/0005-ipts.patch"
+	eapply "${FILESDIR}/6.14/0006-ithc.patch"
+	eapply "${FILESDIR}/6.14/0007-surface-sam.patch"
+	eapply "${FILESDIR}/6.14/0008-surface-sam-over-hid.patch"
+	eapply "${FILESDIR}/6.14/0009-surface-button.patch"
+	eapply "${FILESDIR}/6.14/0010-surface-typecover.patch"
+	eapply "${FILESDIR}/6.14/0011-surface-shutdown.patch"
+	eapply "${FILESDIR}/6.14/0012-surface-gpe.patch"
+	eapply "${FILESDIR}/6.14/0013-cameras.patch"
+	eapply "${FILESDIR}/6.14/0014-amd-gpio.patch"
+	eapply "${FILESDIR}/6.14/0015-rtc.patch"
 	eapply_user
 }
 

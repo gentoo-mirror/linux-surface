@@ -2,13 +2,13 @@ EAPI="8"
 ETYPE="sources"
 K_SECURITY_UNSUPPORTED="1"
 K_WANT_GENPATCHES="base extras experimental"
-K_GENPATCHES_VER="25"
+K_GENPATCHES_VER="27"
 
 inherit kernel-2
 detect_version
 detect_arch
 
-KEYWORDS="amd64 x86 arm64"
+KEYWORDS="~amd64 ~x86 ~arm64"
 HOMEPAGE="https://github.com/linux-surface/linux-surface"
 IUSE="experimental"
 
